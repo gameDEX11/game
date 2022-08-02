@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 749913490}
   - component: {fileID: 749913496}
   - component: {fileID: 749913499}
-  - component: {fileID: 749913498}
+  - component: {fileID: 749913500}
   m_Layer: 0
   m_Name: canavar2_102_0 (1)
   m_TagString: Untagged
@@ -1201,20 +1201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 749913486}
   Hit: {fileID: 749913499}
---- !u!114 &749913498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749913486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a3fc702c320da42a2067073ac14b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  enemy: {fileID: 749913490}
 --- !u!114 &749913499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1213,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943a923fe742bb14f8aac82be35fa829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 749913498}
+  Enemy: {fileID: 749913500}
+  enemy: {fileID: 749913490}
+--- !u!114 &749913500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749913486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50578a50cabe1fa44860bfb089bb98fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4859604540685308158, guid: bde21b1fb533287449205c011d8093f5, type: 3}
   enemy: {fileID: 749913490}
 --- !u!1001 &774959211
 PrefabInstance:

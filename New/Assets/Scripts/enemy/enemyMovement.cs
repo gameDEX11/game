@@ -30,7 +30,7 @@ public class enemyMovement : MonoBehaviour
             transform.localScale=localScale;
             isFacingLeft=!isFacingLeft;
         }
-        Debug.Log(enemyWay);
+        
 
     }
     void FixedUpdate()

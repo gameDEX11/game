@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
+    float time = 0f;
     Animator animator;
     public GameObject enemy;
     float keepHit=0;
@@ -12,28 +13,27 @@ public class Trigger : MonoBehaviour
     {
         animator=GetComponent<Animator>();
     }
+    void Update()
+    {
+        time += Time.deltaTime;
+        Debug.Log(time);    
+    }
 
     private void OnTriggerStay2D(Collider2D col)
     {
        
-        if(col.gameObject.CompareTag("Trident"))
+        if(col.CompareTag("Trident"))
         {
             if(Input.GetMouseButton(0))
         {
-            Hit.hitForce();
-            animator.SetTrigger("Hit");
-            Debug.Log("we hit something");
-            //keepHit++;
-            if(keepHit==3)
-            {
-                Destroy(enemy);
-            }
-            
+                if(time>=1f)
+                {
+                    Hit.hitForce();
+                    animator.SetTrigger("Hit");
+                    time = 0f;
+                }  
         }
         }
-        if(col.gameObject.CompareTag("Player"))
-        {
-            
-        }
+       
     }
 }

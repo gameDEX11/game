@@ -15,11 +15,11 @@ public class hit : MonoBehaviour
     {
         if(Enemy.enemySide())
     {
-        enemy.AddForce(Vector2.right*1000f);
+        enemy.AddForce(Vector2.right*3000f);
     }
     else
     {
-        enemy.AddForce(Vector2.left*1000f);
+        enemy.AddForce(Vector2.left*3000f);
     }
         
     }
