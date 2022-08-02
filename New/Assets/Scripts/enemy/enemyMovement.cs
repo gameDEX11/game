@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour
 {
-   float enemyPosition;
+    public Transform wallCheck;
+    public LayerMask wallLayer;
+    float enemyPosition;
    float playerPosition;
    float distance;
     bool isFacingLeft=true;
@@ -20,7 +22,13 @@ public class enemyMovement : MonoBehaviour
     }
     void Update()
     {
-        enemyPosition=enemy.transform.position.x;
+        if (isWall()==true)
+        {
+            enemy.velocity = new Vector2(0f, 3f);
+            Debug.Log("we hit something");
+                
+        }
+        enemyPosition =enemy.transform.position.x;
         playerPosition=playerBody.transform.position.x;
         distance=enemyPosition-playerPosition;
         if((isFacingLeft&&distance<0f)||(!isFacingLeft&&distance>0.5f))
@@ -64,5 +72,11 @@ public class enemyMovement : MonoBehaviour
     {
          return isFacingLeft;
     }
-   
+    public bool isWall()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.3f, wallLayer);
+
+    }
+
+
 }

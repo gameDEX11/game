@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class enemyMovementS : MonoBehaviour
 {
+    public Transform wallCheck;
+    public LayerMask wallLayer;
     bool isFacingLeft=true;
     float enemyUpWay;
     float enemyWay;
@@ -17,6 +19,11 @@ public class enemyMovementS : MonoBehaviour
     }
     void Update()
     {
+        if(isWall())
+        {
+            Debug.Log("we hit something");
+            enemy.velocity = new Vector2(0f, 3f);
+        }
         if((isFacingLeft&&enemyWay>0)||(!isFacingLeft&&enemyWay<0))
         {
             Vector3 localScale=transform.localScale;
@@ -48,6 +55,11 @@ public class enemyMovementS : MonoBehaviour
         }
         enemy.velocity=new Vector2(enemyWay*3f,enemyUpWay*3f);
 
+    }
+   private bool isWall()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.5f, wallLayer);
+        
     }
    
 }

@@ -16,7 +16,7 @@ public class Trigger : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        Debug.Log(time);    
+           
     }
 
     private void OnTriggerStay2D(Collider2D col)
